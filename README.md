@@ -25,6 +25,14 @@ On Debian 11 "Bullseye" these libraries can be installed by
 apt-get install libcurl4-openssl-dev libmicrohttpd-dev libyaml-dev libcbor-dev libpaho-mqtt-dev libhiredis-dev
 ```
 
+To Install IOT by
+```
+curl -fsSL https://iotech.jfrog.io/artifactory/api/gpg/key/public | sudo gpg --dearmor -o /usr/share/keyrings/iotech.gpg
+echo "deb [signed-by=/usr/share/keyrings/iotech.gpg] https://iotech.jfrog.io/iotech/debian-release $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/iotech.list
+apt update
+apt install iotech-iot-1.4-dev
+```
+
 ### Building
 
 At the toplevel C SDK directory, run
